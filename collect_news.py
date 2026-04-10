@@ -6,12 +6,13 @@ from datetime import datetime, timezone, timedelta
 import os
 
 RSS_FEEDS = [
-    ("ITmedia SaaS", "https://rss.itmedia.co.jp/rss/2.0/itmediabiz.xml"),
-    ("TechCrunch Japan", "https://jp.techcrunch.com/feed/"),
+    ("ITmedia NEWS", "https://rss.itmedia.co.jp/rss/2.0/news_bursts.xml"),
+    ("ZDNet Japan", "https://japan.zdnet.com/rss/index.rdf"),
     ("BRIDGE", "https://thebridge.jp/feed"),
-    ("Marketo Blog", "https://blog.marketo.co.jp/feed"),
-    ("SELECK", "https://seleck.cc/feed"),
+    ("ASCII.jp", "https://ascii.jp/feed/rss.xml"),
+    ("ScanNetSecurity", "https://scan.netsecurity.ne.jp/rss/2.0/ent.xml"),
 ]
+
 
 
 def collect_news():
