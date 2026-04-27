@@ -6,11 +6,11 @@ from datetime import datetime, timezone, timedelta
 import os
 
 RSS_FEEDS = [
-    ("ITmedia AI", "https://rss.itmedia.co.jp/rss/2.0/aiplus.xml"),
-    ("AINOW", "https://ainow.ai/feed/"),
-    ("Ledge.ai", "https://ledge.ai/feed/"),
-    ("ASCII AI", "https://ascii.jp/feed/rss.xml"),
-    ("SELECK", "https://seleck.cc/feed"),
+    ("SaaStr", "https://www.saastr.com/feed/"),
+    ("Product Hunt", "https://www.producthunt.com/feed"),
+    ("TechCrunch SaaS", "https://techcrunch.com/tag/saas/feed/"),
+    ("G2 Learning Hub", "https://learn.g2.com/rss.xml"),
+    ("ChartMogul Blog", "https://chartmogul.com/blog/feed/"),
 ]
 
 def collect_news():
@@ -46,8 +46,8 @@ def build_html(articles):
         </tr>"""
     return f"""
     <html><body style="font-family:sans-serif;max-width:600px;margin:auto;">
-      <h2 style="background:#6a0dad;color:white;padding:16px;border-radius:8px;">
-        🤖 AIツール活用事例 ニュースダイジェスト<br>
+      <h2 style="background:#0077b6;color:white;padding:16px;border-radius:8px;">
+        ☁️ SaaS業界 ニュースダイジェスト<br>
         <span style="font-size:14px;">{today}</span>
       </h2>
       <table width="100%" cellpadding="0" cellspacing="0">{rows}</table>
@@ -60,7 +60,7 @@ def send_email(html_content):
     receiver = os.environ["GMAIL_ADDRESS"]
 
     msg = MIMEMultipart("alternative")
-    msg["Subject"] = f"🤖 AIツールニュース {datetime.now().strftime('%m/%d')}"
+    msg["Subject"] = f"☁️ SaaSニュース {datetime.now().strftime('%m/%d')}"
     msg["From"] = sender
     msg["To"] = receiver
     msg.attach(MIMEText(html_content, "html"))
